@@ -28,7 +28,7 @@ export const register = async (req, res, next) => {
 
     const passwordHash = await User.hashPassword(password);
     const allowedRoles = Object.values(ROLES);
-    const finalRole = 'admin';
+    const finalRole = allowedRoles.includes(role) ? role : ROLES.USER;
 
     const user = await User.create({
       name,

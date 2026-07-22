@@ -9,10 +9,6 @@ export const createTask = async (req, res) => {
       endDate,
       dependencies,
       reminderAt  } = req.body;
-      if (req.user && req.user.role !== 'admin') {
-      return res.status(403).json({ message: "Forbidden: Admin access required." });
-      }
-    
 
     const task = await Task.create({
       title,
