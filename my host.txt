@@ -1,0 +1,2 @@
+
+DATABASE_URL=postgresql://postgres:shaik2430@localhost:5432/Syncaura
